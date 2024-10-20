@@ -1,0 +1,72 @@
+Conversão Temp.
+#include <stdio.h>
+
+int main(){
+ 
+ const float conv = (9.0/5.0);
+ const int ajuste = 32;
+ float celsius, fahren;
+ 
+ printf ("Digite a temperatura em Celsius: ");
+ scanf ("%f", &celsius);
+ fahren = celsius*conv+ajuste;
+ printf ("A temperatura de %.2f°C em Fahrenheit é: %.2f\n", celsius, fahren);
+
+
+return 0;
+}
+
+
+TAD. int main
+#include <stdio.h>
+#include "estoque.c"
+
+int main(){
+    int itens_adicionados, itens_removidos;
+    printf("Estoque inicial: %d\n", consultar_estoque());
+   
+    printf("Digite a quantidade de itens para adicionar ao estoque: ");
+    scanf("%d", &itens_adicionados);
+    adicionar_estoque(itens_adicionados);
+    printf("Estoque após adção: %d\n", consultar_estoque());
+   
+    printf("Digite a quantidade de itens para remover do estoque: ");
+    scanf("%d", &itens_removidos);
+    remover_estoque(itens_removidos);
+    printf("Estoque após remoção: %d\n", consultar_estoque());
+   
+    return 0;
+}
+TAD estoque.c
+#include "estoque.h"
+
+int estoque_total;
+
+void inicializar_estoque(){
+    estoque_total = ESTOQUE_ICINIAL;
+}
+
+void adicionar_estoque(int quantidade){
+    estoque_total += quantidade;
+}
+
+void remover_estoque(int quantidade){
+    estoque_total -= quantidade;
+}
+
+int consultar_estoque(){
+    return estoque_total;
+}
+
+TAD estoque.h
+#ifndef ESTOQUE_H
+#define ESTOQUE_H
+
+#define ESTOQUE_ICINIAL 100
+
+void inicializar_estoque();
+void adicionar_estoque(int quantidade);
+void remover_estoque(int quantidade);
+int consultar_estoque();
+
+#endif
