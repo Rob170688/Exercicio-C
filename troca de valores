@@ -1,0 +1,71 @@
+Exercicio1
+#include <stdio.h>
+
+int soma(int num1, int num2) {
+    return num1 + num2;
+}
+
+int subtracao(int num1, int num2) {
+    return num1 - num2;
+}
+
+int multiplicacao(int num1, int num2) {
+    return num1 * num2;
+}
+
+float divisao(int num1, int num2) {
+    if (num2 == 0) {
+        printf("Erro: Divisão por zero!\n");
+        return 0;
+    }
+    return (float) num1 / num2;
+}
+
+int main() {
+    int num1, num2;
+   
+    printf("Digite o primeiro numero: \n");
+    scanf("%d", &num1);
+   
+    printf("Digite o segundo numero: \n");
+    scanf("%d", &num2);
+   
+    int s = soma(num1, num2);
+    int sub = subtracao(num1, num2);
+    int m = multiplicacao(num1, num2);
+    float d = divisao(num1, num2);
+   
+    printf("Soma: %d\n", s);
+    printf("Subtração: %d\n", sub);
+    printf("Multiplicação: %d\n", m);
+    printf("Divisão: %.2f\n", d);
+   
+    return 0;
+}
+
+Exercicio2
+#include <stdio.h>
+void TrocaPorValor(int a, int b){
+    int temp = a;
+    a = b;
+    b = temp;
+    printf("Após troca por valor (nenhuma alteração): a = %d\n", a, b);
+}
+void TrocarPorReferencia(int *a, int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+int main(){
+    int num1, num2;
+    printf("Digite o primeiro número: ");
+    scanf("%d", &num1);
+    printf("Digite o segundo número: ");
+    scanf("%d", &num2);
+    printf("Valores iniciais: a = %d, b = %d\n", num1, num2);
+    TrocaPorValor(num1, num2);
+    TrocarPorReferencia(&num1, &num2);
+    printf("Após troca por Referência (valores trocados): a = %d, b = %d\n", num1, num2);
+   
+    return 0;
+}
