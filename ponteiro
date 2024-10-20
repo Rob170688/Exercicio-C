@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main(){
+
+int num1, num2, num3;
+
+printf ("Digite o primeiro numero: ");
+scanf ("%d", &num1);
+printf ("Digite o segundo numero: ");
+scanf ("%d", &num2);
+printf ("Digite o terceiro numero: ");
+scanf ("%d", &num3);
+
+printf ("Numero 1: %d (Endereco: %p)\n", num1, &num1);
+printf ("Numero 2: %d (Endereco: %p)\n", num2, &num2);
+printf ("Numero 3: %d (Endereco: %p)\n", num3, &num3);
+
+
+return 0;
+}
+
+#include <stdio.h>
+
+int main(){
+
+int var = 10;
+int *ptr = &var;
+
+printf("Valor da variavel: %d \n", var);
+printf("Valor apontado pelo ponteiro: %d \n", *ptr);
+printf("Valor na memoria da variavel: %p \n", &var);
+printf("Valor apontado da memoria do ponteiro: %p \n", ptr);
+
+return 0;
+}
+
+#include <stdio.h>
+int main(){
+int a = 5;
+int *b = &a;
+int **c = &b;
+
+printf ("Valor original do ponteiro: a = %d\n", a);
+**c = 15;
+printf ("Valor modificado do ponteiro: a = %d\n", a);
+
+return 0;
+}
